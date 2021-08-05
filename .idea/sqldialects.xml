@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__InitDb.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__InitAdmin.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V3__InitPass.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__AddSubscriprionTable.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V5__MessageLikes.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/create_user_after.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/create_user_before.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/messages_list_after.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/messages_list_before.sql" dialect="GenericSQL" />
+  </component>
+</project>
