@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "usr")
-public class User implements UserDetails //предоставляет инфу о пользователе
+public class User implements UserDetails
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,7 +50,7 @@ public class User implements UserDetails //предоставляет инфу �
             (
                     name="user_subscriptions",
                     joinColumns={@JoinColumn(name="subscriber_id")},
-                    inverseJoinColumns = {@JoinColumn(name="channel_id")} //инверсное отображение для разных пользователей
+                    inverseJoinColumns = {@JoinColumn(name="channel_id")}
             )
     private Set<User> subscriptions= new HashSet<>();
 
@@ -60,7 +60,7 @@ public class User implements UserDetails //предоставляет инфу �
     private Set<Role> roles;
     public boolean isAdmin()
     {
-        return roles.contains(Role.ADMIN);//проверка наличия ADMIN у пользователя [boolean]
+        return roles.contains(Role.ADMIN);
     }
     public Long getId() {
         return id;
@@ -173,7 +173,7 @@ public class User implements UserDetails //предоставляет инфу �
     public void setMessages(Set<Message> messages) {
         this.messages = messages;
     }
-//Переопределение equals and hash code для правильного отображения
+
 
     @Override
     public boolean equals(Object o) {

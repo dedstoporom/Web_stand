@@ -3,7 +3,7 @@
     <div><h1>My Profile</h1></div>
     <div class="mt-2"><h2>${user.username}</h2></div>
     <div><a href="/main">Back</a></div>
-    <form method="post"> <#--без action тк отправляется туда же откуда и пришла-->
+    <form method="post">
         <div class="form-group row">
             <label class="col-sm-1.5 col-form-label">New E-mail</label>
             <div class="col-sm-4">

@@ -44,7 +44,7 @@ public class UserService implements UserDetailsService {
         user.setRoles(Collections.singleton(Role.USER));
         user.setActivationCode(UUID.randomUUID().toString());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        if(!StringUtils.isEmpty(user.getEmail()))//проверка строкового значение на наличие
+        if(!StringUtils.isEmpty(user.getEmail()))
         {
             String message=String.format(
                     "Hello, %s! \n" +

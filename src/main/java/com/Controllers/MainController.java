@@ -57,28 +57,28 @@ public class MainController
 //            ,@RequestParam String text
 //            ,@RequestParam String tag //| заменяем оба на Message
             , @Valid Message message,
-               BindingResult bindingResult //для обработки ошибок валидации после него Model
+               BindingResult bindingResult
             , Model model
             // ,Map<String,Object> model
             , @RequestParam("file") MultipartFile file) {
-        ////////////////////////////
+
         Date eq_date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm | dd.mm.yy");
         String date = dateFormat.format(eq_date);
-        ///////////////////////////
+
 //                Message message=new Message(text_box,tag_box,user,date);
-        message.setAuthor(user);//походу так заполнются другие поля автоматом (и остается author)
+        message.setAuthor(user);
         message.setDate(date);
         if (bindingResult.hasErrors()) {
             Map<String, Object> errorsMap = ControllerUtil.getErrors(bindingResult);
             model.mergeAttributes(errorsMap);
-            model.addAttribute("message", message);//для заполнениея поля при ошибке
+            model.addAttribute("message", message);
         }
         else
         {
-            if (!file.isEmpty() && !file.getOriginalFilename().isEmpty())//по оригиналу имени так как файл не равен null
+            if (!file.isEmpty() && !file.getOriginalFilename().isEmpty())
             {
-                File uploadDir = new File(uploadPath);//объявление пути
+                File uploadDir = new File(uploadPath);
                 if (!uploadDir.exists())
                 {
                     uploadDir.mkdir();
@@ -86,7 +86,7 @@ public class MainController
                 String uuid_file = UUID.randomUUID().toString();
                 String result_filename = uuid_file + "_" + file.getOriginalFilename();
                 try {
-                    file.transferTo(new File(uploadPath + "/" + result_filename));//загрузка в директорию
+                    file.transferTo(new File(uploadPath + "/" + result_filename));
                 } catch (IOException e)
                 {
                     e.printStackTrace();

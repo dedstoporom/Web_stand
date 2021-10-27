@@ -28,7 +28,7 @@ public class Message
                     inverseJoinColumns={@JoinColumn(name = "user_id")}
             )
     private Set<User> likes=new HashSet<>();
-    @ManyToOne(fetch = FetchType.EAGER)  //одному пользователю множество сообщений [для БД]
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id")
     private User author;
     public Message()
